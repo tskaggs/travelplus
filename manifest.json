@@ -25,7 +25,6 @@
     "scripts": ["main.js"]
   },
 
-  "key": "8ReP6mY4GQCcu5admKufqKqjJBLLLBMs",
   "permissions": ["experimental", "identity", "https://www.eyeem.com/api/*","http://api.themoviedb.org/*", "http://www.google.com/*", "https://www.google.com/*", "http://www.kayak.com/*", "https://www.kayak.com/*", "https://*.cloudfront.net/*", "webRequest"],
 
   "chrome_url_overrides": {
