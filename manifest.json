@@ -25,6 +25,7 @@
     "scripts": ["main.js"]
   },
 
+  //Add KEY_HERE
   "key": KEY_HERE,
   "permissions": ["experimental", "identity", "https://www.eyeem.com/api/*","http://api.themoviedb.org/*", "http://www.google.com/*", "https://www.google.com/*", "http://www.kayak.com/*", "https://www.kayak.com/*", "https://*.cloudfront.net/*", "webRequest"],
 

@@ -37,7 +37,9 @@ function maps_print(mapsp) {
 /**Start APIs**/
 function eyeem_json(lat, lng) {
 	var eyeem = new XMLHttpRequest();
-	eyeem.open("GET", "https://eyeem.com/api/v2/albums?trending=30&geoSearch=city&lat="+ lat +"&lng="+ lng +"&limit=30&type=city&client_id=TRyvwinyD3mZpb737QUXARm2X65EdkY5", true);
+
+	// Add CLIENT ID to the end of the URL where is says CLIENT_ID
+	eyeem.open("GET", "https://eyeem.com/api/v2/albums?trending=30&geoSearch=city&lat="+ lat +"&lng="+ lng +"&limit=30&type=city&client_id=CLIENT_ID", true);
 	eyeem.onreadystatechange = function(data) {
 	 	if (eyeem.readyState == 4) {
 	    	if (eyeem.status == 200) {
