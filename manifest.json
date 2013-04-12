@@ -1,0 +1,34 @@
+{
+  "name": "TravelPlus",
+  "version": "0.0.0.1",
+  "manifest_version": 2,
+
+  "description": "TravelPlus",
+
+  "content_scripts": [
+    {
+      "matches": [ "https://www.eyeem.com/api/*", "http://www.google.com/*", "https://www.google.com/*", "http://www.kayak.com/*", "https://www.kayak.com/*", "https://*.cloudfront.net/*"],
+      "css": ["styles.css"],
+      "js": [
+        "jquery.js", 
+        "angular.min.js",
+        "mutation_summary.js", 
+        "gmap.js", 
+        "travel_sites.js", 
+        "script.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+
+  "background": {
+    "scripts": ["main.js"]
+  },
+
+  "key": "8ReP6mY4GQCcu5admKufqKqjJBLLLBMs",
+  "permissions": ["experimental", "identity", "https://www.eyeem.com/api/*","http://api.themoviedb.org/*", "http://www.google.com/*", "https://www.google.com/*", "http://www.kayak.com/*", "https://www.kayak.com/*", "https://*.cloudfront.net/*", "webRequest"],
+
+  "chrome_url_overrides": {
+    "newtab": "app.html"
+  }
+}

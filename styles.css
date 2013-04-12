@@ -1,0 +1,79 @@
+#location_information {
+	background: rgb(75, 72, 72);
+}
+
+#location_information h2 {
+	text-align: center;
+	color: #fff;
+	padding: 5px;
+}
+
+#rightadsinner {
+	margin-bottom: 10px;
+}
+#location_information .header {
+	text-align: center;
+}
+#location_information .header a {
+	font-size: 12px;
+	font-weight: bold;
+	color: #fff;
+	text-shadow: 0 1px 1px rgba(95,49,9,1),0px 1px 0 rgba(255,255,255,0);
+}
+
+.landing_name {
+
+}
+
+.eyeem img {
+	width: auto;
+	height: 80px;
+	display: inline-block;
+	vertical-align: top;
+}
+.eyeem a {
+	display: inline-block;
+}
+
+.kayak_orange {
+	font-size: 12px;
+	font-weight: bold;
+	color: #fff;
+	text-shadow: 0 1px 1px rgba(95,49,9,1),0px 1px 0 rgba(255,255,255,0);
+	text-align: center;
+	line-height: normal;
+	display: block;
+	white-space: nowrap;
+	border: 0;
+	padding: 4px 15px 5px;
+	outline: 0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	filter: none;
+	background-image: url("data:image/svg+xml;base64,ICAgICAgICA8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9y…1cmwoI2JnZ2QtZWQ4MjFmLWQwNmIxMy1lZDgyMWYpIiAvPgogICAgICAgIDwvc3ZnPgogICAg");
+	background-image: -ms-linear-gradient(top,#ed821f 0,#d06b13 100%);
+	background-image: -moz-linear-gradient(top,#ed821f 0,#d06b13 100%);
+	background-image: -webkit-linear-gradient(top,#ed821f 0,#d06b13 100%);
+	background-image: -o-linear-gradient(top,#ed821f 0,#d06b13 100%);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#ed821f),color-stop(100%,#d06b13));
+	background-image: linear-gradient(top,#ed821f 0,#d06b13 100%);
+	border: 1px solid #bc5f0d;
+	cursor: pointer;
+	display: inline-block;
+	min-width: 67px;
+	text-decoration: none!important;
+	outline: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	-moz-box-shadow: inset 0 0 2px rgba(255,255,255,0.8);
+	-webkit-box-shadow: inset 0 0 2px rgba(255,255,255,0.8);
+	box-shadow: inset 0 0 2px rgba(255,255,255,0.8);
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
