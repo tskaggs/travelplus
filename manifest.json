@@ -8,25 +8,25 @@
   "content_scripts": [
     {
       "matches": [ "https://www.eyeem.com/api/*", "http://www.google.com/*", "https://www.google.com/*", "http://www.kayak.com/*", "https://www.kayak.com/*", "https://*.cloudfront.net/*"],
-      "css": ["styles.css"],
+      "css": ["styles/styles.css"],
       "js": [
-        "jquery.js", 
-        "angular.min.js",
-        "mutation_summary.js", 
-        "gmap.js", 
-        "travel_sites.js", 
-        "script.js"
+        "libraries/jquery.js", 
+        "libraries/angular.min.js",
+        "libraries/mutation_summary.js", 
+        "scripts/gmap.js", 
+        "scripts/travel_sites.js", 
+        "scripts/script.js"
       ],
       "run_at": "document_end"
     }
   ],
 
   "background": {
-    "scripts": ["main.js"]
+    "scripts": ["scripts/main.js"]
   },
 
   //Add KEY_HERE
-  "key": KEY_HERE,
+  "key": "KEY_HERE",
   "permissions": ["experimental", "identity", "https://www.eyeem.com/api/*","http://api.themoviedb.org/*", "http://www.google.com/*", "https://www.google.com/*", "http://www.kayak.com/*", "https://www.kayak.com/*", "https://*.cloudfront.net/*", "webRequest"],
 
   "chrome_url_overrides": {

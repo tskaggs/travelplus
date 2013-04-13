@@ -6,7 +6,6 @@ var observer = new MutationSummary({
 });
 
 function handleKayakChanges(summaries) {
-	// console.log('Changeeeee!!! FUCK!!!');
 	var hTweetSummary = summaries[0];
 	hTweetSummary.added.forEach(function(newEl) {
 		if ($('#location_information').length == 0) {
