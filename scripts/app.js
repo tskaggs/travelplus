@@ -1,30 +1,7 @@
-onload = function() {
-	var CLIENT_ID = "Enter Client ID Here";
-  	var login = document.getElementById("login");
-	var output = document.getElementById("output");
+$(document).ready(function() {
+	var CLIENT_ID = "CLIENT_ID";
   	var accessToken_ls = localStorage.getItem("token");
   	var api = new EyeEmAPI(accessToken_ls);
-
-	api.request("users/me", undefined, function(data) {  
-		full_name = data.user.fullname;
-		me_url = data.user.webUrl;
-		me_thumb = data.user.thumbUrl;
-		me_photo = data.user.photoUrl;
-		me_photo_total = data.user.totalPhotos;
-		me_follower = data.user.totalFollowers;
-		me_friends = data.user.totalFriends;
-		me_liked = data.user.totalLikedPhotos;
-		me_friends = data.user.totalFriends;
-		me_id = data.user.id;
-
-		$('.fullname a').text(full_name);
-		$('.fullname a').prop('href', me_url);
-		$('.profile_pic').prop('src', me_photo);
-		$('.me_photo_total span').text(me_photo_total);
-		$('.me_follower span').text(me_follower);
-		$('.me_friends span').text(me_friends);
-		$('.me_liked span').text(me_liked);
-	});
 
 	function getLocation(){
 		if (navigator.geolocation) {
@@ -40,7 +17,6 @@ onload = function() {
 	
 	getLocation();
 
-
 	/**Start APIs**/
 	function eyeem_json(lat, lng) {
 		var eyeem = new XMLHttpRequest();
@@ -52,9 +28,9 @@ onload = function() {
 					eyeem_print( eyeem_parsed );
 		    	}
 		 	}
-		};
+		}
 		eyeem.send();
-	};
+	}
 
 	function eyeem_print(eyeem_parsed) {
 	  	$.each(eyeem_parsed, function(i, item) {
@@ -69,15 +45,35 @@ onload = function() {
 
 		  	}
 	 	});
-	};
+	}
 
-	if (localStorage.getItem("Auth") == "true") {
+	if (localStorage.getItem("token")) {
 		$('button#login').hide();
 		$('.logo').hide();
+		api.request("users/me", undefined, function(data) {  
+			full_name = data.user.fullname;
+			me_url = data.user.webUrl;
+			me_thumb = data.user.thumbUrl;
+			me_photo = data.user.photoUrl;
+			me_photo_total = data.user.totalPhotos;
+			me_follower = data.user.totalFollowers;
+			me_friends = data.user.totalFriends;
+			me_liked = data.user.totalLikedPhotos;
+			me_friends = data.user.totalFriends;
+			me_id = data.user.id;
+
+			$('.fullname a').text(full_name);
+			$('.fullname a').prop('href', me_url);
+			$('.profile_pic').prop('src', me_photo);
+			$('.me_photo_total span').text(me_photo_total);
+			$('.me_follower span').text(me_follower);
+			$('.me_friends span').text(me_friends);
+			$('.me_liked span').text(me_liked);
+		});
 	} else {
 		$('.profile_data img.profile_pic').hide();
 		$('.profile_data ul').hide();
-		login.onclick = function() {
+		$('button#login').click(function() {
 		    var identityDetails = {
 		      url: "https://www.eyeem.com/oauth/authorize?response_type=code&client_id="+ CLIENT_ID +"&redirect_uri=chrome-extension://kaoodiebcimakhodoeaajplljgdnjfme/app.html&tokens=token",
 		      interactive: true
@@ -86,46 +82,11 @@ onload = function() {
 		    chrome.experimental.identity.launchWebAuthFlow(identityDetails, function(responseUrl) {
 		      var accessToken = responseUrl.substring(responseUrl.indexOf("=") + 1);
 		      localStorage.setItem('token', accessToken);
-
-		      var api = new EyeEmAPI(accessToken);
-		      api.request("users/me", undefined, function(data) {  
-		        full_name = data.user.fullname;
-		        me_url = data.user.webUrl;
-		        me_thumb = data.user.thumbUrl;
-		        me_photo = data.user.photoUrl;
-		        me_photo_total = data.user.totalPhotos;
-		        me_follower = data.user.totalFollowers;
-		        me_friends = data.user.totalFriends;
-		        me_liked = data.user.totalLikedPhotos;
-		        me_id = data.user.id;
-
-		        $('.fullname a').text(full_name);
-			    $('.fullname a').prop('href', me_url);
-			    $('.profile_pic').prop('src', me_photo);
-			    $('.me_photo_total span').text(me_photo_total);
-			    $('.me_follower span').text(me_follower);
-			    $('.me_friends span').text(me_friends);
-			    $('.me_liked span').text(me_liked);
-		       	$('.profile_data img.profile_pic').fadeIn();
-				$('.profile_data ul').fadeIn();
-				$('button#login').hide();
-				$('.logo').hide();
-
-		        localStorage.setItem('Auth', true);
-		      });
+		      location.reload();
 		    });
-		};
+		});
 	}
-
-  // api.request("users/me/feed", undefined, function(data) {  
-  //   console.log(data);
-  //   output.textContent = JSON.stringify(data, null, 4);
-  //   for (var j = 0; j < data.feedAlbums.items.photos.items.length; ++j) {
-  // 		console.log( data.feedAlbums.items.photos.items[j] );
-		// };
-
-  // });
-};
+});
 
 var EyeEmAPI = function(accessToken) {
   this.request = function(method, arguments, callback) {
@@ -133,8 +94,9 @@ var EyeEmAPI = function(accessToken) {
     xhr.onload = function() {
       callback(JSON.parse(xhr.response));
     };
-
     xhr.open("GET", "https://www.eyeem.com/api/v2/" + method + "?access_token=" + accessToken);
     xhr.send();
   };
 }
+
+

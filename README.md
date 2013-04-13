@@ -16,5 +16,5 @@ Chrome Extension for EyeEm
 
 ##   Warning
 This Chrome Extension uses experimental Chrome APIs.
- * [experimental.app](http://developer.chrome.com/trunk/apps/experimental.app.html)
+ * [Chrome.experimental.* APIs](https://developer.chrome.com/extensions/experimental.html)
  * [app.window](http://developer.chrome.com/trunk/apps/app.window.html)

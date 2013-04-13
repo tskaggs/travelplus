@@ -13,7 +13,6 @@ function gmap_json(location) {
 				$('#location_information .googlemap').append('<img border="0" src="http://maps.googleapis.com/maps/api/staticmap?center='+ lat +','+ lng +'&zoom=10&size=250x100&sensor=false" />');
 
 				eyeem_json(lat, lng);
-				// maps_print( mapsp );
 	    	}
 	 	}
 	};
@@ -35,7 +34,7 @@ function maps_print(mapsp) {
 
 
 /**Start APIs**/
-var CLIENT_ID = "Enter Client ID Here";
+var CLIENT_ID = "CLIENT_ID";
 
 function eyeem_json(lat, lng) {
 	var eyeem = new XMLHttpRequest();
