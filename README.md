@@ -1,6 +1,7 @@
 TravelPlus
 ==========
 Chrome Extension for EyeEm
+[EyeEm At Photo Hack Day 4 blog post](http://eyeemdev.tumblr.com/post/47789437821/eyeem-at-photo-hack-day-4)
 
 ##   Developer Links
 [EyeEm Developer](http://www.eyeem.com/developers)
